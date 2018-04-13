@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Magikarp\'s Moral Support</string>
+    <string name="welcome">Welcome, human.</string>
+    <string name="wisdom_button">Tap for infinite wisdom</string>
+    <string name="more_wisdom">I need more support</string>
+    <string name="wisdom_text">Splash</string>
+</resources>
