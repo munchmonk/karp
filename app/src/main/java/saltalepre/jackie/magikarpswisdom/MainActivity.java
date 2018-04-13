@@ -36,21 +36,21 @@ public class MainActivity extends AppCompatActivity {
     */
 
     private void spin() {
-        long animationDuration = 500;
-        float yDelta = 450f;
+        long animationDuration = 400;
+        float yDelta = -700f;
 
-        ObjectAnimator downAnimator = ObjectAnimator.ofFloat(karpView, "translationY", 0f, yDelta);
+        ObjectAnimator downAnimator = ObjectAnimator.ofFloat(karpView, "translationY", yDelta, 0f);
         downAnimator.setDuration(animationDuration);
 
-        ObjectAnimator upAnimator = ObjectAnimator.ofFloat(karpView, "translationY", yDelta, 0f);
+        ObjectAnimator upAnimator = ObjectAnimator.ofFloat(karpView, "translationY",  0f, yDelta);
         upAnimator.setDuration(animationDuration);
 
         ObjectAnimator rotateAnimator = ObjectAnimator.ofFloat(karpView, "rotation", 0f, 360f);
         rotateAnimator.setDuration(animationDuration * 2);
 
         AnimatorSet animatorSet = new AnimatorSet();
-        animatorSet.playTogether(downAnimator, rotateAnimator);
-        animatorSet.playSequentially(downAnimator, upAnimator);
+        animatorSet.playTogether(upAnimator, rotateAnimator);
+        animatorSet.playSequentially(upAnimator, downAnimator);
         animatorSet.start();
     }
 
@@ -58,22 +58,19 @@ public class MainActivity extends AppCompatActivity {
         spin();
 
         String[] wisdomQuotes =    {"You can do the thing",
-                                    "Just splash it",
-                                    "Evolving is overrated",
-                                    "Be the splash you want to see in the world",
+                                    "Just goddamn do it already",
                                     "I believe in you, human",
-                                    "Haters gonna hate, karps gonna karp",
-                                    "Today's the day, I can just feeeeeel it",
-                                    "Old rod best rod",
-                                    "Tell me who I need to beat up",
                                     "Life sucks, but you don't!",
                                     "You rock!",
                                     "You are a beautiful potato",
-                                    "I find your elbows to be very sexy",
-                                    "Follow the way of the karp and you shall suffer no longer",
-                                    "A true karp doesn't fight his enemies. It just splashes them away",
-                                    "Stop worrying and go make yourself a sandwich",
-                                    "A life without a splash isn't a life worth living"};
+                                    "Who's the best? I'M THE BEST! And you're a close second",
+                                    "If you can dream it, there's a slight chance you might be able to do it",
+                                    "- stress + karp",
+                                    "You didn't fail, you just achieved the wrong result",
+                                    "You'll survive the night, so who cares?",
+                                    "You tap me like no other",
+                                    "I care about you!",
+                                    "Stop worrying and go make yourself a sandwich"};
 
         int randomIndex = randomGenerator.nextInt(wisdomQuotes.length);
         String quote = wisdomQuotes[randomIndex];
